@@ -1,0 +1,29 @@
+enabled: true
+built_in_css: true
+route_activate: /activate_user
+route_forgot: /forgot_password
+route_reset: /reset_password
+parent_acl: false
+protect_protected_page_media: false
+user_registration:
+  enabled: false
+  fields:
+    - username
+    - password
+    - email
+    - fullname
+    - title
+  access:
+    site:
+      login: 'true'
+  options:
+    validate_password1_and_password2: true
+    set_user_disabled: true
+    login_after_registration: false
+    send_activation_email: false
+    send_notification_email: false
+    send_welcome_email: '0'
+rememberme:
+  enabled: true
+  timeout: 604800
+  name: grav-rememberme

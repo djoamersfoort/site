@@ -1,0 +1,16 @@
+title: 'DJO Amersfoort'
+default_lang: nl
+author:
+  name: 'DJO Amersfoort'
+  email: info@djoamersfoort.nl
+taxonomies:
+  - category
+  - tag
+metadata:
+  description: 'De Jonge Onderzoekers Amersfoort is een technische hobbyclub speciaal voor kinderen van 12 t/m 18 jaar. Op onze website kunt u meer informatie vinden over de afdelingen (informatica en elektronica), openingstijden, projecten, open dagen en nog veel meer!'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+
