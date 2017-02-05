@@ -1,0 +1,21 @@
+force_ssl: false
+cache:
+  enabled: false
+twig:
+  cache: false
+  debug: true
+  auto_reload: true
+assets:
+  css_pipeline: false
+  js_pipeline: false
+errors:
+  display: '1'
+debugger:
+  enabled: true
+  shutdown:
+    close_connection: true
+  twig: true
+images:
+  cache_all: false
+session:
+  secure: false

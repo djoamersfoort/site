@@ -1,24 +1,9 @@
-absolute_urls: false
 timezone: Europe/Amsterdam
-param_sep: ':'
-wrapped_site: false
-reverse_proxy_setup: false
-force_ssl: false
+force_ssl: true
 languages:
-  include_default_lang: false
   translations: false
-  translations_fallback: false
-  session_store_active: false
-  http_accept_language: false
-  override_locale: false
-home:
-  alias: /home
-  hide_in_urls: false
 pages:
   theme: djo-amersfoort
-  order:
-    by: default
-    dir: asc
   list:
     count: 20
   dateformat:
@@ -26,105 +11,52 @@ pages:
     short: 'd-m-y G:i'
     long: 'D, d M Y G:i:s'
   publish_dates: true
-  process:
-    markdown: true
-    twig: false
-  twig_first: false
-  never_cache_twig: false
-  events:
-    page: true
-    twig: true
   markdown:
-    extra: true
-    auto_line_breaks: false
     auto_url_links: true
-    escape_markup: false
-    special_chars:
-      '>': gt
-      '<': lt
-  types:
-    - txt
-    - xml
-    - html
-    - htm
-    - json
-    - rss
-    - atom
-  expires: 604800
   last_modified: true
   etag: true
-  vary_accept_encoding: true
-  redirect_default_route: false
   redirect_default_code: '303'
-  redirect_trailing_slash: true
-  ignore_files:
-    - .DS_Store
-  ignore_folders:
-    - .git
-    - .idea
-  ignore_hidden: true
-  url_taxonomy_filters: true
-  frontmatter:
-    process_twig: false
-    ignore_fields:
-      - form
-      - forms
 cache:
-  enabled: false
-  check:
-    method: file
-  driver: auto
-  prefix: g
-  lifetime: 604800
-  gzip: false
+  enabled: true
+  gzip: true
   allow_webserver_gzip: false
 twig:
-  cache: false
-  debug: true
-  auto_reload: true
+  cache: true
+  debug: false
+  auto_reload: false
   autoescape: false
   undefined_functions: true
   undefined_filters: true
-  umask_fix: false
 assets:
-  css_pipeline: false
-  css_pipeline_include_externals: true
-  css_pipeline_before_excludes: true
-  css_minify: true
-  css_minify_windows: false
+  css_pipeline: true
+  css_pipeline_include_externals: false
+  css_minify: false
   css_rewrite: true
-  js_pipeline: false
-  js_pipeline_include_externals: true
-  js_pipeline_before_excludes: true
+  js_pipeline: true
+  js_pipeline_include_externals: false
   js_minify: true
-  enable_asset_timestamp: false
-  collections:
-    jquery: 'system://assets/jquery/jquery-2.x.min.js'
+  enable_asset_timestamp: true
 errors:
-  display: '1'
+  display: 0
   log: true
 debugger:
-  enabled: true
-  shutdown:
-    close_connection: true
-  twig: true
+  enabled: false
 images:
   default_image_quality: 85
-  cache_all: false
+  cache_all: true
   cache_perms: '0755'
-  debug: false
   auto_fix_orientation: true
 media:
   enable_media_timestamp: false
   upload_limit: 0
 session:
-  enabled: true
   timeout: 1800
-  name: grav-site
-  secure: false
+  name: djo-grav
+  secure: true
   httponly: true
   split: true
 gpm:
   releases: stable
   method: curl
   verify_peer: true
+
