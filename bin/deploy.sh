@@ -7,21 +7,35 @@ if [ $(whoami) = 'root' ]; then
 fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-GRAV_ROOT=$(dirname ${DIR})
+GRAV_ROOT=$(dirname $DIR)
 
-cd GRAV_ROOT
+set -xe
+
+cd "${GRAV_ROOT}"
 
 # Install dependancies
+echo Installing / updating Grav
 bin/gpm self-upgrade
 
 # Install packages
+echo Installing admin package
 bin/gpm install --all-yes admin
 
 # Install theme
-git clone https://github.com/djoamersfoort/grav-theme.git $GRAV_ROOT/user/themes/djo-amersfoort
+if [ ! -d "$GRAV_ROOT/user/themes/djo-amersfoort" ]; then
+    echo Downloading DJO Amersfoort theme...
+    git clone https://github.com/djoamersfoort/grav-theme.git "$GRAV_ROOT/user/themes/djo-amersfoort"
+else
+    echo Theme already created
+fi
 
 # Create root user
-bin/plugin login adduser --user=root --email=admin@localhost --permissions=b --title="Root admin" --state=enabled
+bin/plugin login add-user \
+    --email=root-user@example.com \
+    --permissions=b \
+    --fullname="Root user" \
+    --title="Default admin user" \
+    --state=enabled
 
 # Echo that we're done
 echo 'Should be done now!'
