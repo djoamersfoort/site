@@ -1,5 +1,5 @@
 ---
-title: Scheikunde
+title: '<a href="/themas/scheikunde">Scheikunde</a>'
 position: left
 colour: white
 ---

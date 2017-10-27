@@ -6,17 +6,18 @@ De Jonge Onderzoekers is geopend op vrijdagavond en zaterdagochtend.
 
 ## Vrijdagavond
 Tijd: 19:00 - 22:00
-Afdelingen: elektronica, informatica, scheikunde en makerlab
 
-Vrijdagavond is er soms de mogelijkheid om voor aanvang te eten, dit wordt vooraf kenbaar gemaakt.
 
 ## Zaterdagochtend
 Tijd: 09:30 - 13:30
-Afdelingen: elektronica, informatica
+
 
 ### Vakanties
 
 Als vuistregel worden de schoolvakanties voor regio midden-Nederland aangehouden. 
+Soms worden tijdens deze vakanties speciale dingen georganiseerd. Zie hiervoor de [announcements chat](https://t.me/DJOAankondigingen).
+Voor meer informatie zie [het vakantieoverzicht](/informatie/vakanties).
+
 Tijdens de kleine vakanties worden er vaak filmavonden of 'gezelligheidsavonden' gehouden
 waar een spelletje gespeelt kan worden.
 

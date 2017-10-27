@@ -2,7 +2,7 @@
 /**
  * @package    Grav.Common
  *
- * @copyright  Copyright (C) 2014 - 2016 RocketTheme, LLC. All rights reserved.
+ * @copyright  Copyright (C) 2014 - 2017 RocketTheme, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
@@ -286,6 +286,11 @@ class Uri
 
         $this->url = $this->base . $this->uri;
 
+        // if case insensitive urls is enabled, lowercase the url
+        if( $grav['config']->get('system.case_insensitive_urls') ){
+            $this->url = strtolower($this->url);
+        }
+
         // get any params and remove them
         $uri = str_replace($this->root, '', $this->url);
 
@@ -295,9 +300,9 @@ class Uri
             $uri = str_replace($setup_base, '', $uri);
         }
 
-        // If configured to, redirect trailing slash URI's with a 301 redirect
+        // If configured to, redirect trailing slash URI's with a 302 redirect
         if ($config->get('system.pages.redirect_trailing_slash', false) && $uri != '/' && Utils::endsWith($uri, '/')) {
-            $grav->redirect(str_replace($this->root, '', rtrim($uri, '/')), 301);
+            $grav->redirect(str_replace($this->root, '', rtrim($uri, '/')), 302);
         }
 
         // process params
@@ -727,7 +732,7 @@ class Uri
      *
      * @return boolean      is eternal state
      */
-    public function isExternal($url)
+    public static function isExternal($url)
     {
         if (Utils::startsWith($url, 'http')) {
             return true;
@@ -1085,5 +1090,21 @@ class Uri
         $urlWithNonce = $url . '/' . $nonceParamName . Grav::instance()['config']->get('system.param_sep', ':') . Utils::getNonce($action);
 
         return $urlWithNonce;
+    }
+
+    /**
+     * Is the passed in URL a valid URL?
+     *
+     * @param $url
+     * @return bool
+     */
+    public static function isValidUrl($url)
+    {
+        $regex = '/^(?:(https?|ftp|telnet):)?\/\/((?:[a-z0-9@:.-]|%[0-9A-F]{2}){3,})(?::(\d+))?((?:\/(?:[a-z0-9-._~!$&\'\(\)\*\+\,\;\=\:\@]|%[0-9A-F]{2})*)*)(?:\?((?:[a-z0-9-._~!$&\'\(\)\*\+\,\;\=\:\/?@]|%[0-9A-F]{2})*))?(?:#((?:[a-z0-9-._~!$&\'\(\)\*\+\,\;\=\:\/?@]|%[0-9A-F]{2})*))?/';
+        if (preg_match($regex, $url)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

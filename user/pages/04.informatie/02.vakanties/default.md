@@ -1,6 +1,6 @@
 ---
 title: Vakantieoverzicht
-page_subtitle: 'Seizoen 2016-2017'
+page_subtitle: 'Seizoen 2017-2018'
 ---
 
 Op de volgende data is er geen reguliere DJO:

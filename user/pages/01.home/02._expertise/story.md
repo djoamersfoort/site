@@ -1,5 +1,6 @@
 ---
 title: Expertisegroepen
+published: false
 ---
 
 Binnen DJO mag iedereen doen wat zij willen, onze specialisten geven daarbij hulp en begeleiding. 
