@@ -1,0 +1,3 @@
+[submodule "DJOAmersfoort theme"]
+	path = user/themes/djo-amersfoort
+	url = https://github.com/djoamersfoort/grav-theme.git
